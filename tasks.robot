@@ -9,7 +9,7 @@
 Documentation     Example robot that allows a human to search for a specific
 ...               search query in Google Images
 Library           RPA.Dialogs
-Library           RPA.Browser
+Library           RPA.Browser.Selenium
 Suite Teardown    Close All Browsers
 
 *** Keywords ***
