@@ -14,10 +14,9 @@ Suite Teardown    Close All Browsers
 
 *** Keywords ***
 Collect Search Query From User
-    Create Form    Search form
-    Add Text Input    Search query    search
-    &{response}=    Request Response
-    [Return]    ${response["search"]}
+    Add text input    search    label=Search query
+    ${response}=    Run dialog
+    [Return]    ${response.search}
 
 *** Keywords ***
 Search Google Images For Requested Query
