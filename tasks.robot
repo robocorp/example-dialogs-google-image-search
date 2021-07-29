@@ -19,9 +19,14 @@ Collect Search Query From User
     [Return]    ${response.search}
 
 *** Keywords ***
+Accept Google Consent
+    Click Element    xpath://button/div[contains(text(), 'I agree')]
+
+*** Keywords ***
 Search Google Images For Requested Query
     [Arguments]    ${search_query}
     Open Available Browser    https://images.google.com
+    Run Keyword And Ignore Error    Accept Google Consent
     Input Text    name:q    ${search_query}
     Submit Form
 
