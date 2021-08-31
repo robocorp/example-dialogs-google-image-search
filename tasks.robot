@@ -3,7 +3,7 @@
 # This robot demonstrates the use of the [`RPA.Dialogs`](https://robocorp.com/docs/libraries/rpa-framework/rpa-dialogs) library to create a simple user interface to allow the user to choose a search query for an image in Google Images Search.
 #
 #
-# > You can find more information on this example robot on our [documentation site](https://robocorp.com/docs/development-howtos/dialogs-assistant/how-to-collect-input-from-users).
+# > You can find more information on this example robot on our [documentation site](https://robocorp.com/docs/development-guide/dialogs-assistant/how-to-collect-input-from-users).
 
 *** Settings ***
 Documentation     Example robot that allows a human to search for a specific
