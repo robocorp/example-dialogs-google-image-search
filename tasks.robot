@@ -22,11 +22,15 @@ Collect search query from user
     RETURN    ${response.search}
 
 Accept Google consent
-    Click Element    xpath://button/div[contains(text(), 'I agree')]
+    Click Element if Visible    xpath://button/div[contains(text(), 'I agree')]
+
+Close Google Sign in if shown
+    Click Element If Visible    No thanks
 
 Search Google Images
     [Arguments]    ${search_query}
     Open Available Browser    https://images.google.com
+    Close Google Sign in if shown
     Run Keyword And Ignore Error    Accept Google Consent
     Input Text    name:q    ${search_query}
     Submit Form
