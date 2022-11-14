@@ -11,13 +11,14 @@ Suite Teardown      Close All Browsers
 *** Tasks ***
 Save the first image for a search query collected from the user
     TRY
-	    ${search_query}=    Collect search query from user
-	    Search Google Images    ${search_query}
-	    Collect the first search result image
+        ${search_query}=    Collect search query from user
+        Search Google Images    ${search_query}
+        Collect the first search result image
     EXCEPT
-        Capture Page Screenshot     %{ROBOT_ARTIFACTS}${/}error.png 
+        Capture Page Screenshot    %{ROBOT_ARTIFACTS}${/}error.png
         Fail    Checkout the screenshot: error.png
     END
+
 
 *** Keywords ***
 Collect search query from user
@@ -29,11 +30,10 @@ Reject Google Cookies
     Click Element If Visible    xpath://button/div[contains(text(), 'Reject all')]
 
 Accept Google Consent
-    Click Element If Visible    xpath://button/div[contains(text(), 'I agree')]
+    Click Element If Visible    xpath://button/div[contains(text(), 'Accept all')]
 
 Close Google Sign in if shown
     Click Element If Visible    No thanks
-
 
 Search Google Images
     [Arguments]    ${search_query}
