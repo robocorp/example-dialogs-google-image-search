@@ -1,6 +1,6 @@
-# Dialogs Google Image Search
+# RPA.Assistant Google Image Search
 
-This robot demonstrates the use of the [`RPA.Dialogs`](https://robocorp.com/docs/libraries/rpa-framework/rpa-dialogs) library to create a simple user interface to allow the user to choose a search query for an image in Google Images Search.
+This robot demonstrates the use of the [`RPA.Assistant`](https://robocorp.com/docs/libraries/rpa-framework/rpa-assistant) library to create a simple user interface to allow the user to choose a search query for an image in Google Images Search.
 
 <img src="images/form-ui.png" style="margin-bottom:20px">
 
