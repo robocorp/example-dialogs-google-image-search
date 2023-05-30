@@ -3,7 +3,7 @@ Documentation       Example robot that allows a human to search for a specific
 ...                 search query in Google Images.
 
 Library             RPA.Browser.Selenium
-Library             RPA.Dialogs
+Library             RPA.Assistant
 
 Suite Teardown      Close All Browsers
 
@@ -23,7 +23,9 @@ Save the first image for a search query collected from the user
 *** Keywords ***
 Collect search query from user
     Add text input    search    label=Search query
+    Add Submit Buttons    buttons=Submit    default=Submit
     ${response}=    Run dialog
+        ...    height=200    
     RETURN    ${response.search}
 
 Reject Google Cookies
@@ -45,6 +47,6 @@ Search Google Images
     Submit Form
 
 Collect the first search result image
-    Wait Until Element Is Visible    css:div[data-ri="0"]
+    Wait Until Element Is Visible    css:div[data-ri="0"]    timeout=15
     Screenshot    css:div[data-ri="0"]
     ...    filename=%{ROBOT_ROOT}${/}output${/}image_from_google.png
